@@ -5,6 +5,7 @@ let pedacoEscolhido = null;
 let erros = 0; 
 let vitorias = 0; 
 
+/*
 let grade = [
     "--6-----1",
     "-7--6--5-",
@@ -16,8 +17,8 @@ let grade = [
     "-6--7--8-",
     "------4--"
 ]
+*/
 
-/*
 let grade = [
     "---827941",
     "172964358",
@@ -29,7 +30,6 @@ let grade = [
     "369471582",
     "257638419"
 ]
-*/
 
 let solucaoGrade = [
     "536827941",
@@ -167,7 +167,7 @@ function gravarRecorde() {
             const usuarioSelecionado = usuario.find(usuario => usuario.usuarioNome === usuarioNome);
 
             if (usuarioSelecionado){
-                const usuarioSelecionadoId = usuarioSelecionado.id; 
+                usuarioSelecionadoId = usuarioSelecionado.id; 
 
                 axios.put(`${DB_URL}/${usuarioSelecionadoId}`, { usuarioVitorias: vitorias})
                 .then(resposta => {
@@ -189,7 +189,7 @@ function deletarRecorde() {
         const usuarioSelecionado = usuario.find(usuario => usuario.usuarioNome === usuarioNome);
 
         if (usuarioSelecionado){
-            const usuarioSelecionadoId = usuarioSelecionado.id; 
+            usuarioSelecionadoId = usuarioSelecionado.id; 
 
             axios.delete(`${DB_URL}/${usuarioSelecionadoId}`)
             .then(resposta => {
